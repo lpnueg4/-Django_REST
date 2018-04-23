@@ -17,7 +17,6 @@ from rest_framework.response import Response
 from snippets.models import Snippet
 from snippets.serializers import SnippetSerializer
 
-
 # @csrf_exempt
 # def snippet_list(request):
 #     """
