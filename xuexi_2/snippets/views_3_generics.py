@@ -41,7 +41,8 @@ class UserList(generics.ListAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
-
+# xxxList xxxDetail 并不是关键字,
+# 而是generics.ListAPIView, generics.RetrieveAPIView, 使这个方法具有返回列表和单个的特性
 class UserDetail(generics.RetrieveAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
