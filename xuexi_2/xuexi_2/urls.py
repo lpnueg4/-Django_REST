@@ -30,3 +30,4 @@ urlpatterns += [
     url(r'^api-auth/', include('rest_framework.urls')),
     url(r'^schema/$', schema_view),
 ]
+
