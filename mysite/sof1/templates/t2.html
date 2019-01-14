@@ -1,0 +1,45 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>c3demo1</title>
+    <!-- 加载c3.css文件-->
+    <!-- <link href="./c3.css" rel="stylesheet" type="text/css"> -->
+    <link href="{% static 'c3.css' %}" rel="stylesheet" type="text/css">
+
+    <!-- 加载d3.js和c3.js -->
+    <!-- <script src="./d3.min.js" charset="utf-8"></script> -->
+    <script src="{% static 'd3.min.js' %}" charset="utf-8"></script>
+    <!-- <script src="./c3.min.js"></script> -->
+    <script src="{% static 'c3.min.js' %}"></script>
+</head>
+<body>
+<!--准备绑定图表的元素-->
+<div id="chart"></div>
+</body>
+<script>
+    // 调用generate()方法
+    var chart = c3.generate({
+        //  参数获取
+        data: {
+            // url: '/data/c3_test.csv' // 通过url获得csv格式数据
+            columns: [
+                ['data1', 30, 200, 100, 400, 150, 250],
+                ['data2', 50, 20, 10, 40, 15, 25]
+            ]
+        }
+    });
+    // 设定延时函数setTimeout
+    setTimeout(function () {
+        c3.generate({
+            // 参数获取
+            data: {
+                // url: 'data/c3_test.json', // 通过url获得json数据
+                url: "{% static 'data/c3_test.json' %}", // 通过url获得json数据
+                mimeType: 'json'
+            }
+        });
+    }, 2000);
+</script>
+</html>
