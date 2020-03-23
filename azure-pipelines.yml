@@ -11,7 +11,8 @@ jobs:
 - deployment: DeployWeb
   displayName: deploy Web App
   pool:
-    vmImage: 'test_pool'
+    # vmImage: 'test_pool'
+    name: 'test_pool'
   # creates an environment if it doesn't exist
   environment: 'env1'
   strategy:
